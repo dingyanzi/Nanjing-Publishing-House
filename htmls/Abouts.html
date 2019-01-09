@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>南京出版社</title>
+	</head>
+
+	<body>
+		<div class="Press_intro" id="n1">
+			<div class="main">
+				<div class="Press_bg">
+					<div class="Press_txt">
+						<div class="tits">出版社简介</div>
+						<div id="read" style="height: 200px;width: 100%;overflow: auto;">
+							
+						</div>
+					</div>
+					<a ui-sref="publichead.Aboutsdetail({id:index})" class="btn slow">＋more</a>
+				</div>
+			</div>
+		</div>
+		<div class="leader" id="n2">
+			<div class="main">
+				<h2 class="titles"><b>领导班子</b></h2>
+				<div class="leader_img">
+					<div class="bd">
+						<ul>
+							<li ng-repeat="x in maindata">
+								<a target="_blank" href="#"><img src={{x.imgurl}} /></a>
+								<div class="textcontent">
+									<h2><b>{{x.name}}</b>社长</h2>
+									<p ng-repeat="y in x.zhiwei">{{y}}</p>
+									<div class="txt">
+										<p>
+											{{x.description}}
+										</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="hd">
+						<ul>
+							<li ng-repeat='list in secondata' ng-click="toggle($index)"><img src={{list.imgs}} /></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="Department_intro" id="n3">
+			<div class="main partement">
+				<h2 class="titles" style="border-bottom: 1px solid #e3e3e3;"><b>部门介绍</b></h2>
+				<p>不断强化我社管理，完善了各项管理制度，把职责任务明确到出版社的每一位员工，让全体员工自觉的将自己的前途和命运与出版社
+的发展结合在一起。出版社的发展也离不开全体员工的不懈努力和团结 一致的团队精神。</p>
+				<div class="partements">
+					<ul>
+						<li ng-repeat="x in result"><a ui-sref="publichead.Aboutsdetail({id:$index})">{{x.department_name}}</a></li>
+					</ul>
+					
+					
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.nicescroll.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("#read").niceScroll({
+				cursorcolor: "rgba(255,255,255,0)",
+				cursoropacitymax: 1,
+				touchbehavior: false,
+				cursorwidth: "5px",
+				cursorborder: "0",
+				cursorborderradius: "5px"
+			});
+			
+		</script>
+</html>

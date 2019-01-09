@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="main" id="main">
+		<div class="ArticleBox cc" style="margin-bottom: 50px;">
+			<div class="Article">
+				<h3>热门文章</h3>
+				<ul>
+					<li ng-repeat='x in remen'>
+						<a ui-sref="publichead.bookdetail({id:x.read_id})">{{x.title}}</a>
+					</li>
+				</ul>
+			</div>
+			<div class="Article A2">
+				<h3>近期文章</h3>
+				<ul>
+					<li ng-repeat='x in zuijin'>
+						<a ui-sref="publichead.bookdetail({id:x.read_id})">{{x.title}}</a>
+					</li>
+				</ul>
+			</div>
+			<div class="Article A3">
+				<h3>近期评论</h3>
+				<ul>
+					<li ng-repeat='x in comment'>
+						<a ui-sref="publichead.bookdetail({id:x.read_id})">{{x.content}}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>

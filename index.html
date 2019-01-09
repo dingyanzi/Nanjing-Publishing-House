@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>南京出版社</title>
+		<link rel="stylesheet" type="text/css" href="css/layout.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<style type="text/css">
+			.content {
+				background: url(images/bgs.jpg) repeat-y;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body ng-app="mainApp" ng-controller="myctrl">
+		<div class="topwrap">
+			<div class="main cc">
+				<img src="images/logo.png">
+				<div class="rt">
+					<div class="search_open">
+						<div class="se1"><input type="text" placeholder="输入百度搜索内容" />
+							<a class="search1"><i class="icon icon-search"></i>搜索</a>
+						</div>
+						<div class="se2"><input type="text" placeholder="输入本站搜索内容" />
+							<a class="search2"><i class="icon icon-search"></i>搜索</a>
+						</div>
+						<a id="remove">取消</a>
+					</div>
+					<a id="search"><i class="icon iconfont icon-search"></i>搜索</a>
+					<a id="login" ng-click="bigbox()"><i class="icon iconfont icon-login"></i>登录</a>
+				</div>
+				<div class="nav">
+					<ul class="cc ccnavlist">
+						<li class="mainlevel" ng-repeat="x in nav" ui-sref-active="on">
+							<a ui-sref={{x.url}}>{{x.menu_name}}</a><i class="icon"></i>
+							<ol>
+								<li ng-repeat="y in x.publishtypelist">
+									<a ng-click="setKeys($index,x.publish_menu_id,y.url)">{{y.classify}}</a>
+								</li>
+							</ol>
+						</li>
+
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<div class="content">
+			<div ui-view></div>
+		</div>
+
+		<div class="bottom">
+			<div class="main">
+				<div class="bottom_nav cc">
+					<img src="images/copylogo.png">
+					<ul>
+						<li>
+							<a ui-sref="publichead.submission">欢迎投稿 &nbsp;/ &nbsp;</a>
+						</li>
+						<li>
+							<a ui-sref="publichead.introduce">机构介绍&nbsp;/ &nbsp;</a>
+						</li>
+						<li>
+							<a ui-sref="publichead.contacts">联系我们 </a>
+						</li>
+					</ul>
+					<a ui-sref="" class="links">友情链接：南京出版传媒集团</a>
+				</div>
+				<p>&copy; 南京出版社 苏ICP备14057356号 &nbsp;&nbsp;技术支持：南京松果网络科技有限公司</p>
+			</div>
+		</div>
+
+
+	</body>
+	<script src="js/jquery.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-ui-router.js"></script>
+	<script src="js/factory.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

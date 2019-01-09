@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="bannerImg">
+			<img src={{bannerlist.imgurl}} style="width: 0px;">
+		</div>
+		<div class="Crumbs">
+			<div class="main">
+				<div class="current">
+					<a href="#/indexs"><i><img src="images/icon8.png"/></i>首页 &gt;
+						<a href="">{{nowtitle}}</a>
+					</a>
+				</div>
+				<ul class="navigation">
+					<li ng-repeat="x in transferType">
+						<a ui-sref-active="cur" ui-sref="publichead.{{x.url}}({keys:its,key:$index})">{{x.classify}}</a>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+		<div ui-view></div> 
+		<div ui-view="nav"></div> 
+	</body>
+</html>

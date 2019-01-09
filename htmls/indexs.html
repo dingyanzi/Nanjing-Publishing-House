@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>南京出版社</title>
+	</head>
+
+	<body>
+		<div class="slide banner" data-slide='{"action":"click","fn":"banner_ext","time":"3000"}'>
+
+		</div>
+		<div class="wrap bann_ext">
+			<ul class="l frontCover"></ul>
+		</div>
+		<div class="wrapbox">
+			<div class="wrap1">
+				<div class="main">
+					<div class="tit">
+						<span class="title"><i class="icon-book1"></i>新书推荐</span>
+						<a ui-sref="publichead.book_recommend" class="more">＋MORE</a>
+					</div>
+				</div>
+				<div class="main2">
+					<div class="cc" id="wqhg">
+						<a id="LeftArr" href=""></a>
+						<div id="xstj">
+							<ul>
+								<li  ng-repeat="x in index">
+									<img src={{x.pic_url}}>
+									<h4 title="{{x.title}}">{{x.title}}</h4>
+									<h5><b>作者：</b>{{x.book_author}}</h5>
+									<p title="{{x.book_describe}}">{{x.book_describe}}</p>
+									<a ui-sref="publichead.bookdetail({id:x.read_id})" class="arrow"><img src="images/icon.png"></a>
+								</li>
+							</ul>
+						</div>
+						<a id="RightArr" href=""></a>
+					</div>
+
+				</div>
+			</div>
+			<div class="wrap2">
+				<div class="main cc">
+					<div class="news">
+						<div class="tit">
+							<span class="title"><i class="icon-book2"></i>新闻中心</span>
+							<a ui-sref="publichead.news" class="more">＋MORE</a>
+						</div>
+						<div class="newslist">
+							<ul class="cc">
+								<li ng-class="{true:'close',false:''}[isActive === $index]" ng-click="selectItem($index)" ng-repeat="x in indexb">
+									<div class="tip cc">
+										<a >{{x.title}}</a><span>{{x.createtime}}</span></div>
+									<div class="fancybox">
+										<a ui-sref="publichead.bookdetail({id:x.read_id})" style="display: block; overflow: hidden;">
+										<img src="{{x.pic_url}}">
+										<p style="cursor: pointer;" title="{{x.book_describe}}">{{x.book_describe}}</p>
+										</a>
+									</div>
+								</li>
+							
+							</ul>
+						</div>
+					</div>
+					<div class="down">
+						<div class="tit">
+							<span class="title"><i class="icon-book3"></i>资料下载</span>
+							<a ui-sref="publichead.downloadactive" class="more">＋MORE</a>
+						</div>
+						<ul class="downlist">
+							<li ng-repeat = "x in indexa">
+								<code>
+									<img src="{{x.pic_url}}"/>
+								</code>
+								<span title="{{x.title}}" style="cursor: default;">{{x.title}}</span>
+								<p title="{{x.book_describe}}"><b>提供：</b>{{x.book_describe}}
+								</p>
+								<a ui-sref="publichead.downloaddetail({id:x.read_id})" class="btn"><img src="images/icon3.png"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="wrap3">
+				<div class="main">
+					<div class="tit">
+						<span class="title"><i class="icon-book4"></i>精品图书</span>
+						<a ui-sref="publichead.bookcenteractive" class="more">＋MORE</a>
+					</div>
+					<div class="jpbox cc">
+						<ul class="navbook">
+							<li ng-class="{true:'on',false:''}[isNow === $index]" ng-click="changeItem($index)" ng-repeat = "x in itemd">
+								<a name='{{x.type2}}'>{{x.type_name}}</a>
+							</li>
+						</ul>
+						<div class="list" style="display: block;">
+							<dl ng-repeat = "x in items">
+								<dt><a ui-sref="publichead.bookdetail({id:x.read_id})"><img src={{x.pic_url}}></a></dt>
+								<dd title="{{x.title}}" style="cursor: default;">{{x.title}}</dd>
+							</dl>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+	</body>
+	<script src="js/jquery.nivo.slider.pack.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js"></script>
+
+</html>

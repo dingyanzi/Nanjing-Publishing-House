@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>南京出版社</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+
+	<body ng-controller="ContactController">
+		<div class="bookBg">
+			<div class="main">
+				<ul class="booklist cc">
+					<li ng-repeat = "x in result.list">
+						<img src="{{x.pic_url}}">
+						<h4>{{x.title}}</h4>
+						<h5><b>作者：</b>{{x.book_author}}</h5>
+						<p>
+							{{x.book_describe}}
+						</p>
+						<a ui-sref="publichead.bookdetail({id:x.read_id})" class="arrow"></a>
+						<code></code>
+					</li>
+				</ul>
+				<p class="tabs">
+					<span ng-click = "preData()">上一页</span>
+					<span ng-class = "{true: 'currentd', false: ''}[x==p]" ng-repeat = "x in arrs" ng-click="thisData(x)">{{x}}</span>
+					<span ng-click="nexData()">下一页</span>
+				</p>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	
+</html>

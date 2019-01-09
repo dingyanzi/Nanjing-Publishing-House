@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>南京出版社</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<style type="text/css">
+			.Press_intro {
+				width: 100%;
+				min-height: 650px !important;
+				padding: 51px 0px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="Press_intro" id="n1">
+			<div class="partementmain">
+				<ul>
+					<li ng-repeat = "x in result.list">
+						<img src="{{x.pic_url}}" />
+						<div class="licon">
+							<div class="normal">
+								<a ui-sref="publichead.bookdetail({id:x.read_id})" title="{{x.title}}">{{x.title}}</a>
+								<p>
+									{{x.book_describe}}
+								</p>
+								<p>TIME: <span>{{x.createtime}}</span></p>
+								<a ui-sref="publichead.bookdetail({id:x.read_id})" class="jump"><img src="images/newsicon.png"/></a>
+							</div>
+							<div class="current">
+
+							</div>
+						</div>
+					</li>
+					
+				</ul>
+				<p class="tabs">
+					<span ng-click = "preData()">上一页</span>
+					<span ng-class = "{true: 'currentd', false: ''}[x==p]" ng-repeat = "x in arrs" ng-click="thisData(x)">{{x}}</span>
+					<span ng-click="nexData()">下一页</span>
+				</p>
+			</div>
+
+		</div>
+	</body>	
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

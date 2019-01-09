@@ -1,0 +1,787 @@
+.Crumb {
+	height: 63px;
+	line-height: 63px;
+	width: 100%;
+	background: #fff;
+	border-bottom: 1px solid #eaeaea;
+}
+
+.current {
+	float: left;
+}
+
+.navigation {
+	float: right;
+}
+
+.Crumb .current i {
+	vertical-align: middle;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.Crumb a {
+	font-size: 14px;
+}
+
+.navigation li,
+.navigation li a {
+	float: left;
+	display: inline-block;
+	width: 79px;
+	text-align: center;
+	color: #666;
+	position: relative;
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+.navigation a.cur,
+.navigation a:hover {
+	background: url(../images/line.jpg) no-repeat bottom left;
+}
+
+#n1 {
+	height: auto !important;
+	overflow: hidden !important;
+	padding-bottom: 64px;
+}
+
+.partementmain {
+	width: 1100px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.partementmain ul {
+	width: 1140px;
+	overflow: hidden;
+}
+
+.partementmain ul li {
+	border: #EDEDED solid 1px;
+	width: 348px;
+	height: 420px;
+	overflow: hidden;
+	margin-bottom: 25px;
+	margin-right: 25px;
+	float: left;
+	background-color: #f2f2f2;
+}
+
+.partementmain ul li>img {
+	display: block;
+	width: 350px;
+	height: 242px;
+	overflow: hidden;
+}
+
+.partementmain ul li .licon {
+	position: relative;
+	height: 180px;
+	overflow: hidden;
+}
+
+.partementmain ul li .licon .normal {
+	width: 318px;
+	padding: 16px;
+	height: 180px !important;
+	background-color: transparent;
+	position: absolute;
+	top: 0;
+	z-index: 99;
+}
+
+.partementmain ul li .licon .current {
+	width: 350px;
+	height: 180px;
+	background-color: #fff0d4;
+	position: absolute;
+	bottom: -188px;
+	z-index: 1;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-o-transition: all 0.4s;
+}
+
+.partementmain ul li:hover .licon .current {
+	width: 350px;
+	height: 180px;
+	background-color: #fff0d4;
+	position: absolute;
+	bottom: 0px;
+	z-index: 1;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-o-transition: all 0.4s;
+}
+
+.partementmain ul li .licon .normal>a {
+	color: #3e3a39;
+	font-size: 18px;
+	width: 100%;
+	display: block !important;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.partementmain ul li .licon p {
+	color: #595757;
+	font-size: 14px;
+	width: 100%;
+	margin-top: 12px;
+	display: block;
+	height: 55px;
+	padding-bottom: 6px;
+	overflow: hidden;
+}
+
+.partementmain ul li .licon p+p {
+	border-top: #FFFFFF solid 1px;
+	color: #595757;
+	font-size: 14px;
+	width: 100%;
+	margin-top: 12px;
+	display: block;
+	height: 55px;
+	padding-top: 12px;
+	border-bottom: #FFFFFF solid 1px;
+}
+
+.partementmain ul li .licon a.jump {
+	position: absolute;
+	width: 40px;
+	right: 16px;
+	top: 136px;
+	z-index: 99;
+}
+
+.tabs {
+	width: 100%;
+	display: block;
+	clear: both;
+	text-align: center;
+	height: 40px;
+	margin-top: 24px;
+}
+
+.tabs span {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	unselectable:on;
+	margin: 0 4px;
+	padding: 4px 8px;
+	border: #d6d5d1 solid 1px;
+	text-align: center;
+	cursor: pointer;
+	margin: 0px 6px;
+}
+
+.tabs span:hover {
+	padding: 4px 8px;
+	color: #FFFFFF;
+	border: #cf1f14 solid 1px;
+	background-color: #cf1f14;
+	text-align: center;
+	cursor: pointer;
+	margin: 0px 6px;
+}
+
+.tabs span.currentd {
+	padding: 4px 8px;
+	color: #FFFFFF;
+	border: #cf1f14 solid 1px;
+	background-color: #cf1f14;
+	text-align: center;
+	cursor: pointer;
+	margin: 0px 6px;
+}
+
+.show>img {
+	width: 711px;
+	display: block;
+	margin: 12px auto;
+}
+
+.show>p {
+	display: block;
+	margin: 20px auto;
+}
+
+.clickcontent {
+	width: 100%;
+	border-bottom: #dadada solid 1px;
+	margin: 0 auto;
+	padding-bottom: 48px;
+	overflow: hidden;
+}
+
+.clickcontent div {
+	width: 240px;
+	margin: 0 auto;
+	padding-bottom: 24px;
+}
+
+.clickcontent div a:first-child {
+	display: block;
+	float: left;
+	background-color: #f85d00;
+	color: #FFFFFF;
+	border: none;
+	border-radius: 2px;
+	height: 36px;
+	line-height: 34px;
+	font-size: 18px;
+	cursor: pointer;
+	padding: 0px 10px;
+}
+
+.clickcontent div a img {
+	width: 24px;
+	margin-top: 5px;
+	float: left;
+}
+
+.clickcontent div a:last-child {
+	display: block;
+	float: right;
+	background-color: #91c24f;
+	color: #FFFFFF;
+	border: none;
+	border-radius: 2px;
+	height: 36px;
+	line-height: 34px;
+	font-size: 18px;
+	cursor: pointer;
+	padding: 0px 10px;
+}
+
+.next {
+	clear: both;
+	overflow: hidden;
+	padding-top: 24px;
+}
+
+.next a {
+	display: block;
+	margin-bottom: 6px;
+}
+
+.show cite {
+	position: absolute;
+	bottom: 44px;
+	right: 35px;
+}
+
+.showWhite {
+	width: 1044px;
+	padding: 28px 28px 36px 28px;
+	background: #fff;
+	box-shadow: 1px 2px 5px #ccc;
+	position: relative;
+}
+
+.pinglun {
+	width: 1044px;
+	overflow: hidden;
+	margin-top: 68px;
+	background-color: #fffcf4;
+	padding: 28px;
+}
+
+.navs {
+	width: 100%;
+	border-bottom: #d0cecc solid 1px;
+	overflow: hidden;
+	margin-bottom: 24px;
+	padding-bottom: 10px;
+	position: relative;
+}
+
+.navs dd {
+	width: 120px;
+	text-align: center;
+	float: left;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.navs dd.curs {
+	color: #e43328;
+}
+
+.navs .red {
+	position: absolute;
+	width: 120px;
+	height: 4px;
+	bottom: 0px;
+	background-color: #e43328;
+}
+
+.pingmain {
+	width: 100%;
+	height: 575px;
+	overflow: hidden;
+	position: relative;
+}
+
+.pingmain li.ping1 {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 575px;
+	overflow: hidden;
+	margin-top: 0px;
+	background: url(../images/textarea.png) no-repeat top center;
+	z-index: 10;
+}
+
+.ping1 div {
+	width: 748px;
+	overflow: hidden;
+}
+
+.ping1 div ol {
+	width: 748px;
+	overflow: hidden;
+}
+
+.ping1 div ol li {
+	width: 748px;
+	height: 40px;
+	margin-bottom: 18px;
+	overflow: hidden;
+}
+
+.ping1 div ol li label {
+	display: block;
+	float: left;
+	width: 80px;
+	overflow: hidden;
+	text-align: right;
+	font-size: 16px;
+	line-height: 40px;
+	padding-right: 8px;
+}
+
+.ping1 div ol li.higher {
+	display: block;
+	float: left;
+	height: 110px;
+	overflow: hidden;
+}
+
+.ping1 div ol li input {
+	display: block;
+	float: left;
+	width: 250px;
+	height: 38px;
+	border: #EDEDED solid 1px;
+	font-size: 16px;
+	padding-left: 8px;
+	border-radius: 3px;
+}
+
+.ping1 div ol li.left {
+	width: 350px;
+	float: left;
+	overflow: hidden;
+}
+
+.ping1 div ol li.higher div {
+	display: block;
+	float: left;
+	width: 657px;
+	height: 110px;
+	overflow: hidden;
+}
+
+.ping1 div ol li.higher div .upload {
+	width: 131px;
+	float: left;
+}
+
+.ping1 div ol li.higher div.imggroup>.setimg {
+	width: 131px;
+	height: 107px;
+	float: left;
+	position: relative;
+	margin-left: 12px;
+	display: none;
+}
+
+.ping1 div ol li.higher div.imggroup>.setimg .remove {
+	width: 20px;
+	position: absolute;
+	right: 12px;
+	top: 12px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.ping1 div ol li.higher div.imggroup>.setimg .mainimg {
+	width: 131px;
+	height: 107px;
+	position: absolute;
+	z-index: 0;
+}
+
+.ping1 div ol li.biggist {
+	display: block;
+	float: left;
+	height: 200px;
+	overflow: hidden;
+}
+
+.ping1 div ol li.biggist div {
+	display: block;
+	float: left;
+	width: 657px;
+	height: 200px;
+	overflow: hidden;
+	position: relative;
+}
+
+.ping1 div ol li.biggist div textarea {
+	display: block;
+	width: 639px;
+	height: 182px;
+	padding: 4px 8px;
+	resize: none;
+	overflow: hidden;
+	position: absolute;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	color: #333333;
+	left: 0;
+	border: #EDEDED solid 1px;
+	z-index: 0;
+}
+
+.ping1 div ol li.biggist div img {
+	overflow: hidden;
+	position: absolute;
+	right: 18px;
+	bottom: 20px;
+	z-index: 4;
+	cursor: pointer;
+}
+
+.btn {
+	width: 657px !important;
+	overflow: hidden;
+	height: 60px !important;
+}
+
+.btn>a {
+	display: block;
+	float: left;
+	text-align: center;
+	width: 200px;
+	height: 40px !important;
+	line-height: 40px !important;
+	font-size: 18px !important;
+	border-radius: 4px;
+	border: none !important;
+	color: #FFF0D4;
+	background-color: #e59728 !important;
+	cursor: pointer !important;
+}
+
+.btn>a+a {
+	background-color: transparent !important;
+	float: right !important;
+	width: 200px;
+	height: 40px !important;
+	font-size: 18px !important;
+	border-radius: 4px;
+	border: none;
+	color: #8D8B7E !important;
+	border: #D0CECC solid 1px !important;
+}
+
+.ping2 {
+	position: absolute;
+	height: 575px;
+	width: 100%;
+	overflow: auto;
+	top: 0;
+	z-index: 1;
+}
+
+.ping2 dl dd {
+	overflow: hidden;
+	border-bottom: #666 solid 1px;
+	padding-bottom: 24px;
+}
+
+.ping2 dl dd div {
+	padding-top: 18px;
+	overflow: hidden;
+}
+
+.ping2 dl dd h2 {}
+
+.ping2 dl dd h2 b {
+	height: 24px;
+	float: left;
+	text-align: center;
+	width: 126px;
+}
+
+.ping2 dl dd h2 b+span {
+	float: left;
+	width: 834px;
+}
+
+.ping2 .littleping {
+	margin-top: 24px;
+	border-top: #EDEDED solid 1px;
+}
+
+.ping2 dl dd h2 b+span+span {
+	height: 24px;
+	float: left;
+	text-align: right;
+	width: 84px !important;
+}
+
+.ping2 dl dd .imggroup {
+	padding-left: 126px;
+	width: 800px;
+	overflow: hidden;
+	margin: 20px 0px;
+}
+
+.ping2 dl dd .imggroup img {
+	width: 120px;
+	height: 120px;
+	float: left;
+	margin-right: 8px;
+}
+
+.ping2 dl dd p {
+	padding-left: 126px;
+}
+
+.ping2 dl dd p span {
+	float: right;
+	cursor: pointer;
+}
+
+.online {
+	max-width: 100%;
+	min-height: 600px !important;
+	background-image: url(../images/onlinereadbac.png) !important;
+	position: relative;
+	overflow: hidden;
+}
+
+.onlines .onlinemain {
+	position: absolute;
+	width: 1100px;
+	height: 100% !important;
+	left: 0;
+	right: 0;
+	top: 0% !important;
+	bottom: 0% !important;
+	margin: auto;
+	overflow: hidden;
+	background-color: #FFFFFF;
+	transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+}
+
+.onlinemain {
+	position: absolute;
+	width: 1100px;
+	height: 80%;
+	left: 0;
+	right: 0;
+	top: 10%;
+	bottom: 10%;
+	margin: auto;
+	overflow: hidden;
+	background-color: #FFFFFF;
+	transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+}
+
+.onlinemain .leftpic {
+	height: 100%;
+	width: 1015px;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	z-index: 99999;
+	background-color: #303030;
+}
+
+.onlinemain .leftpic .imgcontain {
+	height: 100%;
+	width: 1015px;
+	overflow: hidden;
+	position: absolute;
+	left: 0px;
+	background: url(../images/ts.png) no-repeat left center;
+	z-index: 1;
+}
+
+.onlinemain .leftpic .imgcontain ul {
+	width: 1015px;
+	overflow: hidden;
+}
+
+.onlinemain .leftpic .imgcontain ul li {
+	width: 1015px;
+	overflow: hidden;
+}
+
+.onlinemain .leftpic .imgcontain ul li img {
+	display: block;
+	width: 1015px;
+	overflow: hidden;
+}
+
+.onlinemain .leftpic .linkmulu {
+	height: 100%;
+	width: 410px;
+	overflow: hidden;
+	position: absolute;
+	right: -10px;
+	display: none;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 99999;
+	padding-bottom: 12px;
+}
+
+.onlinemain .leftpic .linkmulu dl {
+	width: 420px;
+	padding-top: 10px;
+	overflow: hidden;
+}
+
+.onlinemain .leftpic .linkmulu dl dd {
+	cursor: pointer;
+	width: 190px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	float: left;
+}
+
+.onlinemain .leftpic .linkmulu dl dd img {
+	width: 190px;
+	display: block;
+}
+
+.onlinemain .leftpic .linkmulu dl dd p {
+	width: 190px;
+	text-align: center;
+	display: block;
+}
+
+.onlinemain .rightlist {
+	float: right;
+	height: 100%;
+	width: 85px;
+	position: relative;
+	background-color: #66b742;
+}
+
+.onlinemain .rightlist .mulu {
+	cursor: pointer;
+	margin-top: 48px;
+	height: 60px;
+	padding: 8px 0px;
+	color: #FFFFFF;
+	background-color: transparent;
+	transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+}
+
+.onlinemain .rightlist .changenow {
+	cursor: pointer;
+	margin-top: 48px;
+	height: 60px;
+	padding: 8px 0px;
+	color: #FFFFFF;
+	background-color: transparent;
+	transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+}
+
+.onlinemain .rightlist .changenow img {
+	margin-top: 6px !important;
+	margin-bottom: 10px !important;
+	cursor: pointer;
+}
+
+.onlinemain .rightlist .mulu img {
+	width: 38px;
+	display: block;
+	margin: 0px auto;
+}
+
+.onlinemain .rightlist .mulu p {
+	font-size: 14px;
+	width: 100%;
+	margin-top: 4px;
+	text-align: center;
+	cursor: pointer !important;
+	color: #FFFFFF;
+}
+
+.onlinemain .rightlist .mulu:hover {
+	margin-top: 48px;
+	height: 60px;
+	background-color: #414141;
+	transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+}
+
+.onlinemain .rightlist .changenow:hover {
+	margin-top: 48px;
+	height: 60px;
+	background-color: transparent;
+	transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+}
+
+.onlinemain .rightlist .bottomsd {
+	display: none;
+	position: absolute;
+	width: 100%;
+	bottom: 48px;
+	z-index: 99;
+	cursor: pointer;
+}
+
+.onlinemain .rightlist .bottomsd img {
+	width: 36px;
+}

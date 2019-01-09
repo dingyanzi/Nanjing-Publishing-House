@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<style type="text/css">
+			html,
+			body {
+				overflow-x: hidden;
+			}
+			.bannerImg{
+				background: url(images/onlineread.png);
+			}
+		</style>
+	</head>
+
+	<body class="sev">
+		<div class="bannerImg">
+			<img src="images/onlineread.png">
+		</div>
+		<div class="Crumb">
+			<div class="main">
+				<div class="current">
+					<a href="#"><i><img src="images/icon8.png"/></i>首页 &gt;
+						<a href="#">在线阅读</a>
+					</a>
+				</div>
+				<ul class="navigation">
+					<li>
+						<a class="n1">阅读</a>
+					</li>
+					<li>
+						<a href="javascript:history.go(-1);">返回</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+		<div class="online">
+			<div class="onlinemain">
+				<div class="leftpic">
+					<div class="imgcontain">
+						<ul>
+							<li ng-repeat = "x in item">
+								  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1015" height="1414.2" id="FlashID" title="aa">
+								  <param name="movie" value={{x}}>
+								  <param name="quality" value="high">
+								  <param name="wmode" value="opaque">
+								  <param name="swfversion" value="9.0.115.0">
+								  <param name="expressinstall" value="Scripts/expressInstall.swf">
+								  <!-- 下一个对象标签用于非 IE 浏览器。所以使用 IECC 将其从 IE 隐藏。 -->
+								  <!--[if !IE]>-->
+								  <object type="application/x-shockwave-flash" data={{x}} width="1015" height="1414.2">
+								    <!--<![endif]-->
+								    <param name="quality" value="high">
+								    <param name="wmode" value="opaque">
+								    <param name="swfversion" value="9.0.115.0">
+								    <param name="expressinstall" value="Scripts/expressInstall.swf">
+								    <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+								    <!--[if !IE]>-->
+								  </object>
+								<!--<![endif]-->
+								</object>
+							</li>
+						</ul>
+					</div>
+					<div class="linkmulu">
+						<dl>
+							<dd ng-repeat = "x in items" ng-click = "toHere($index)">
+								<img src="{{x}}" />
+								<p>-{{$index}}-</p>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="rightlist">
+					<div class="mulu cld">
+						<img src="images/mulu.svg" />
+						<p>缩略图</p>
+					</div>
+					<div class="mulu bottomsd">
+						<img src="images/exitread.svg" />
+						<p>退出</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.nicescroll.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(".imgcontain,.linkmulu").niceScroll({
+				cursorcolor: "rgba(255,255,255,0)",
+				cursoropacitymax: 1,
+				touchbehavior: false,
+				cursorwidth: "5px",
+				cursorborder: "0",
+				cursorborderradius: "5px"
+			});
+			var heights = $(window).height();
+			if(heights > 600) {
+				$(".online").css({
+					height: heights
+				});
+			} else {
+				heights = 600
+				$(".online").css({
+					height: heights
+				});
+
+			}
+			window.onresize = function() {
+				var heights = $(window).height();
+				if(heights > 600) {
+					$(".online").css({
+						height: heights
+					});
+				} else {
+					heights = 600
+					$(".online").css({
+						height: heights
+					});
+				}
+			}
+			$(function() {
+				$(".n1").click(function() {
+					var n1_top = $(".online").offset().top;
+					$('html,body').animate({
+						scrollTop: n1_top
+					}, 300);
+					$('html, body').css("overflow", "hidden");
+					$(".online").addClass("onlines");
+					$(".bottomsd").fadeIn("200");
+					$(".Crumbs").css("display", "none");
+				});
+
+				$(".bottomsd").click(function() {
+					$(this).fadeOut("200");
+					$('html, body').animate({
+						scrollTop: 435
+					}, 300);
+					$('html, body').css("overflow-y", "auto");
+					$(".online").removeClass("onlines");
+					$(".Crumbs").css("display", "block");
+
+				})
+
+				$(".cld").click(function() {
+					if($(".linkmulu").hasClass("on")) {
+						$(".linkmulu").removeClass("on");
+						$(".linkmulu").hide("slow")
+					} else {
+						$(".linkmulu").addClass("on");
+						$(".linkmulu").show("slow")
+					}
+
+				})
+			});
+		</script>
+
+</html>

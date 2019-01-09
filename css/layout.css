@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+p,
+blockquote,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+
+/*-----------------*/
+
+p {
+	cursor: default;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	cursor: default;
+	font-size: 100%;
+	font-weight: normal;
+}
+
+img {
+	margin: 0;
+	padding: 0
+}
+
+header {
+	z-index: 9999;
+}
+
+.cc:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.cc {
+	display: inline-block;
+}
+
+
+/* Hides from IE-mac \*/
+
+* html .cc {
+	height: 1%;
+}
+
+.cc {
+	display: block;
+}
+
+
+/* End hide from IE-mac */
+
+
+/*-----------------*/
+
+ul,
+ol,
+li {
+	list-style: none;
+}
+i{
+	font-style: normal;
+}
+a {
+	font-style: normal;
+	color: #9a9a9a;
+	text-decoration: none;
+	outline: none;
+	cursor: pointer;
+}
+img{
+	border: 0;
+}
+input,textarea{
+	outline: none;
+}
+body {
+	font-family: "Microsoft Yahei", "宋体", Arial Narrow;
+	color: #404040;
+}
+cite{
+	font-style: normal;
+}
+.main {
+	width: 1100px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.lt {
+	float: left;
+}
+
+.rt {
+	float: right;
+}
+
+.slow {
+	transition: all 0.2s ease-in;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	-o-transition: all 0.2s ease-in;
+}
+
+.bannerImg{
+	width: 100%;
+	height: 262px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.bannerImg img{
+	display: block;
+	height: 0px;
+	display: none;
+}

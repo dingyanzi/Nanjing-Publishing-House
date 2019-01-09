@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>南京出版社</title>
+		<link rel="stylesheet" type="text/css" href="css/layout.css">
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/animate2.min.css">
+		<style type="text/css">
+			.cloopage{
+				width: 300px;
+				height: 60px;
+				border-radius: 18px;
+				background-color: rgba(0,0,0,0.6);
+				position: fixed;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+				z-index: 9999;
+				display: none;
+			}
+			.cloopage p{
+				font-size: 18px;
+				text-align: center;
+				line-height: 60px;
+				color: #FFFFFF;
+				display: block;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			.bigger{
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,0,0,0.8);
+				position: fixed;
+				top: 0;
+				z-index: 99999999999;
+				display: none;
+			}
+			.bigger .imggroup{
+				width: 75%;
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				border-radius: 24px;
+				z-index: 99999999999;
+				overflow: hidden;
+				max-height: 80%;
+				background-position: center !important;
+				background-repeat: no-repeat !important;
+				background-size: contain !important;
+				background-color: #FFFFFF;
+			}
+			.bigger .imggroup>img:first-child{
+				position: absolute;
+				top: 0;
+				right: 0;
+				cursor: pointer;
+			}
+			.bigger .imggroup>img:last-child{
+				width: 100%;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="showBox" >
+			<div class="main">
+				<div class="downloadShow cc">
+					<h2>{{result.title}}</h2>
+					<div class="time"><cite>{{result.createtime}}</cite><code>阅读 {{result.readnum}}次 </code></div>
+					<img class="lt" src="{{result.pic_url}}">
+					<div class="downadress">
+						<a href="{{result.downloadurl}}" target="view_window" class="downbtn">下载地址</a>	
+						<div class="clickcontent">
+							<div>
+								<a ng-click = "addlike()"><img src="images/great.svg" />喜欢<span>{{result.likenum}}</span></a>
+								<a ng-click="jumpOpen()"><img style="width: 20px; margin-top: 8px; margin-right: 4px;" src="images/pinglun.svg" />评论<span>{{result.replynum}}</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="pinglun">
+					<dl class="navs">
+						<dd class="curs">发表评论</dd>
+						<dd>查看评论({{result.replynum}})</dd>
+						<div class="red">
+
+						</div>
+					</dl>
+					<ul class="pingmain">
+						<li class="ping1">
+							<div>
+								<ol>
+									<li class="left">
+										<label for="">昵<span style="opacity: 0;">昵称</span>称</label>
+										<input type="text" ng-model = "nickname" placeholder="请输入昵称" />
+									</li>
+									<li class="left">
+										<label for="">邮<span style="opacity: 0;">昵称</span>箱</label>
+										<input type="text" ng-model = "mail" placeholder="请输入邮箱" />
+									</li>
+									<li class="higher">
+										<label for="">上传图片</label>
+										<div class="imggroup">
+											<div class="upload">
+												<label style="width: 131px;" for="upload" class="uploader"><img src="images/uploader.png" width="131px" height="107px"/></label>
+												<input style="display: none;" id="upload" type="file" name="" id="" value="" />
+											</div>
+											<div class="setimg">
+												<img class="remove" onclick="reMove(this)" src="images/delete.svg" />
+												<img class="mainimg" id="pic" src="" alt="" />
+												<input type="hidden" name="" id="imgcover" value="" />
+											</div>
+										</div>
+									</li>
+									<li class="biggist">
+										<label for="">评<span style="opacity: 0;">昵称</span>论</label>
+										<div class="textarea">
+											<textarea ng-model="content" name="" id="" cols="30" rows="10"></textarea>
+											<img src="images/biaoqing.png" />
+										</div>
+									</li>
+									<li style="height: 60px;">
+										<label for=""><span style="opacity: 0;">昵称</span></label>
+										<div class="btn">
+											<a ng-click="reply()">提交</a>
+											<a ng-click="reset()">重写</a>
+										</div>
+									</li>
+								</ol>
+
+							</div>
+						</li>
+						<li class="ping2">
+							<dl>
+								<dd ng-repeat="x in result.commentlist">
+									<div>
+										<h2><b>{{x.nickname}}</b><span>{{x.content}}</span><span style="color:#B52E26;">#{{x.num}}楼</span></h2>
+										<div class="imggroup">
+											<img ng-click="bigger(x.img)" ng-if="x.img!=null" src="{{x.img}}" alt="" />
+										</div>
+										<p ng-click="toreply(x.id,x.nickname)">time：{{x.create_time}} <span>回复</span></p>
+									</div>
+									<div class="littleping" ng-repeat="y in x.replylist">
+										<h2><b style="opacity: 0;">name</b><span><i style="padding-right: 20px;font-weight: bolder;">{{y.name}}</i>{{y.content}}</span><span style="opacity: 0;">#28楼</span></h2>
+										<div class="imggroup">
+											<img ng-click="bigger(y.img)" ng-if="y.img!=null" src="{{y.img}}" alt=""/>
+										</div>
+										<p ng-click="toreply(y.rid)">time：{{y.time}}</p>
+									</div>
+									
+								</dd>
+							</dl>			
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="cloopage">
+			<p>
+				
+			</p>
+		</div>
+		<div class="bigger">
+			<div class="imggroup">
+				<img src="images/close.jpg" onclick="closeThis(this)"/>
+				<img class="thisimg" src=""/>
+			</div>
+		</div>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.nicescroll.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(".ping2").niceScroll({
+				cursorcolor: "rgba(255,255,255,0)",
+				cursoropacitymax: 1,
+				touchbehavior: false,
+				cursorwidth: "5px",
+				cursorborder: "0",
+				cursorborderradius: "5px"
+			});
+			function closeThis(obj){
+				$("html,body").css("overflow-y","auto");
+				$(obj).parents(".bigger").fadeOut("slow");
+			}
+			$(".ping1").animate({top:0},300);
+			$(".ping2").animate({top:-2000},300);
+			$(".navs dd").click(function() {
+				var index = $(this).index();
+				$(this).addClass("curs").siblings().removeClass("curs");
+				$(".navs div").animate({
+					left: index * 120
+				}, 200);
+				if(index==0){
+					$(".ping1").animate({top:0},300);
+					$(".ping2").animate({top:-2000},300);
+				}else{
+					$(".ping1").animate({top:-2000},300);
+					$(".ping2").animate({top:0},300);
+					
+				}
+				
+				
+
+			})
+
+			function reMove(obj) {
+				$(obj).parent(".setimg").hide("slow");
+				$(obj).siblings().attr("src", "");
+			}
+			$(".uploader").click(function() {
+				$("#upload").change(function() {
+					var objUrl = getObjectURL(this.files[0]); //获取图片的路径，该路径不是图片在本
+					if(objUrl) {
+						$("#pic").attr("src", objUrl);
+						$(".setimg").show("slow"); //将图片路径存入src中，显示出图片
+						gen_base64();
+					}
+				});
+			});
+
+			function getObjectURL(file) {
+				var url = null;
+				if(window.createObjectURL != undefined) { // basic
+					url = window.createObjectURL(file);
+				} else if(window.URL != undefined) { // mozilla(firefox)
+					url = window.URL.createObjectURL(file);
+				} else if(window.webkitURL != undefined) { // webkit or chrome
+					url = window.webkitURL.createObjectURL(file);
+				}
+				return url;
+			}
+		
+			function $_(id) {
+                    return document.getElementById(id);
+            }
+            function gen_base64() {
+                var file = $_('upload').files[0];
+                r = new FileReader();  //本地预览
+                r.onload = function(){
+                    $_('imgcover').value = r.result;
+                }
+               r.readAsDataURL(file);    //Base64
+            }
+	
+		</script>
+
+</html>
